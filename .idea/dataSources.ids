@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - lightmvc@localhost" uuid="47c08c46-d2ab-4e3e-89fb-cceba9ac11a3">
+    <database-info product="MySQL" version="5.5.29" jdbc-version="4.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.22 ( Revision: ${bzr.revision-id} )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="lightmvc"/>
+      <table id="2" parent="1" name="sys_user"/>
+      <table id="3" parent="1" name="sys_area"/>
+      <table id="4" parent="1" name="sys_organization"/>
+      <table id="5" parent="1" name="sys_resource"/>
+      <table id="6" parent="1" name="sys_role"/>
+      <table id="7" parent="1" name="sys_role_resource"/>
+      <column id="8" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="9" parent="2" name="AGE">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="10" parent="2" name="LOGINNAME">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="11" parent="2" name="PASSWORD">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="12" parent="2" name="PHONE">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="13" parent="2" name="SEX">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="14" parent="2" name="USERNAME">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="15" parent="2" name="CREATE_DATE">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="16" parent="2" name="CREATE_USER">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="17" parent="2" name="UPDATE_DATE">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="18" parent="2" name="UPDATE_USER">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="19" parent="2" name="STATUS">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="20" parent="2" name="ORG_NO">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="21" parent="2" name="ROLE_ID">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <index id="22" parent="2" name="FK_6vw4myrlp8051mqt23s9tuddy">
+        <columns>ORG_NO</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="23" parent="2" name="FK_genox2lpj0qi73a9u9d4p01o">
+        <columns>ROLE_ID</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="24" parent="2" name="UK_f6rjo145aukfhtvouw1kc0ho0">
+        <columns>PHONE</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="25" parent="2" name="UK_lwbjeq173hjwoyt6uof399hs5">
+        <columns>LOGINNAME</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="26" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="27" parent="2" name="UK_f6rjo145aukfhtvouw1kc0ho0">
+        <columns>PHONE</columns>
+        <underlying-index>UK_f6rjo145aukfhtvouw1kc0ho0</underlying-index>
+      </key>
+      <key id="28" parent="2" name="UK_lwbjeq173hjwoyt6uof399hs5">
+        <columns>LOGINNAME</columns>
+        <underlying-index>UK_lwbjeq173hjwoyt6uof399hs5</underlying-index>
+      </key>
+      <foreign-key id="29" parent="2" name="FK_6vw4myrlp8051mqt23s9tuddy">
+        <columns>ORG_NO</columns>
+        <ref-key>~.sys_organization.UK_690d13x9hle28lu70layuotbu</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="30" parent="2" name="FK_genox2lpj0qi73a9u9d4p01o">
+        <columns>ROLE_ID</columns>
+        <ref-key>~.sys_role.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="31" parent="3" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>bigint(10)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="32" parent="3" name="CREATE_DATE">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="33" parent="3" name="CREATE_USER">
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="34" parent="3" name="UPDATE_DATE">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="35" parent="3" name="UPDATE_USER">
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="36" parent="3" name="NAME">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="37" parent="3" name="PID">
+        <data-type>bigint(10)</data-type>
+      </column>
+      <column id="38" parent="3" name="SEQ">
+        <mandatory>1</mandatory>
+        <data-type>int(3)</data-type>
+      </column>
+      <column id="39" parent="3" name="DESCRIPTION">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="40" parent="3" name="PARENT">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="41" parent="3" name="TREEID">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <index id="42" parent="3" name="FK_cfa96ly9na0jwiceke9q888u5">
+        <columns>PARENT</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="43" parent="3" name="FK_mmw02ffg896dqjy6vsjg5sun">
+        <columns>PID</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="44" parent="3" name="UK_1vrv5f6cf5odlvir4mfde598e">
+        <columns>NAME</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="45" parent="3" name="UK_cy0yi2glr37vioeetqr3kp4x3">
+        <columns>TREEID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="46" parent="3" name="PRIMARY">
+        <columns>ID</columns>
+        <primary>1</primary>
+      </key>
+      <key id="47" parent="3" name="UK_1vrv5f6cf5odlvir4mfde598e">
+        <columns>NAME</columns>
+        <underlying-index>UK_1vrv5f6cf5odlvir4mfde598e</underlying-index>
+      </key>
+      <key id="48" parent="3" name="UK_cy0yi2glr37vioeetqr3kp4x3">
+        <columns>TREEID</columns>
+        <underlying-index>UK_cy0yi2glr37vioeetqr3kp4x3</underlying-index>
+      </key>
+      <foreign-key id="49" parent="3" name="FK_cfa96ly9na0jwiceke9q888u5">
+        <columns>PARENT</columns>
+        <ref-key>PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="50" parent="4" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="51" parent="4" name="CREATE_DATE">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="52" parent="4" name="CREATE_USER">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="53" parent="4" name="UPDATE_DATE">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="54" parent="4" name="UPDATE_USER">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="55" parent="4" name="ADDRESS">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="56" parent="4" name="ICONCLS">
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="57" parent="4" name="NAME">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="58" parent="4" name="ORG_NO">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="59" parent="4" name="SEQ">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="60" parent="4" name="PARENT">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="61" parent="4" name="AREA_ID">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <index id="62" parent="4" name="FK_al9u4a0pvb2arjcon3igmgvlf">
+        <columns>AREA_ID</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="63" parent="4" name="FK_rgjmou2cmad3875ijkqeueo7d">
+        <columns>PARENT</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="64" parent="4" name="UK_690d13x9hle28lu70layuotbu">
+        <columns>ORG_NO</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="65" parent="4" name="PRIMARY">
+        <columns>ID</columns>
+        <primary>1</primary>
+      </key>
+      <key id="66" parent="4" name="UK_690d13x9hle28lu70layuotbu">
+        <columns>ORG_NO</columns>
+        <underlying-index>UK_690d13x9hle28lu70layuotbu</underlying-index>
+      </key>
+      <foreign-key id="67" parent="4" name="FK_al9u4a0pvb2arjcon3igmgvlf">
+        <columns>AREA_ID</columns>
+        <ref-key>~.sys_area.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="68" parent="4" name="FK_rgjmou2cmad3875ijkqeueo7d">
+        <columns>PARENT</columns>
+        <ref-key>PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="69" parent="5" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="70" parent="5" name="CREATE_DATE">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="71" parent="5" name="CREATE_USER">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="72" parent="5" name="UPDATE_DATE">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="73" parent="5" name="UPDATE_USER">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="74" parent="5" name="DESCRIPTION">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="75" parent="5" name="ICONCLS">
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="76" parent="5" name="NAME">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="77" parent="5" name="SEQ">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="78" parent="5" name="STATUS">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="79" parent="5" name="TREEID">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="80" parent="5" name="TYPE">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="81" parent="5" name="URL">
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="82" parent="5" name="PARENT">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <index id="83" parent="5" name="FK_d2473d7i1ufidnx7oglwt0gdo">
+        <columns>PARENT</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="84" parent="5" name="UK_r5js1vdf20l8j8mrghlfu57p7">
+        <columns>TREEID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="85" parent="5" name="PRIMARY">
+        <columns>ID</columns>
+        <primary>1</primary>
+      </key>
+      <key id="86" parent="5" name="UK_r5js1vdf20l8j8mrghlfu57p7">
+        <columns>TREEID</columns>
+        <underlying-index>UK_r5js1vdf20l8j8mrghlfu57p7</underlying-index>
+      </key>
+      <foreign-key id="87" parent="5" name="FK_d2473d7i1ufidnx7oglwt0gdo">
+        <columns>PARENT</columns>
+        <ref-key>UK_r5js1vdf20l8j8mrghlfu57p7</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="88" parent="6" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="89" parent="6" name="CREATE_DATE">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="90" parent="6" name="CREATE_USER">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="91" parent="6" name="UPDATE_DATE">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="92" parent="6" name="UPDATE_USER">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="93" parent="6" name="DESCRIPTION">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="94" parent="6" name="NAME">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="95" parent="6" name="SEQ">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="96" parent="6" name="ROLE_TYPE">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="97" parent="6" name="ORG_ID">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <index id="98" parent="6" name="FK_5ms2eyl99f7so3wjl84sxaqgj">
+        <columns>ORG_ID</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="99" parent="6" name="PRIMARY">
+        <columns>ID</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="100" parent="6" name="FK_5ms2eyl99f7so3wjl84sxaqgj">
+        <columns>ORG_ID</columns>
+        <ref-key>~.sys_organization.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="101" parent="7" name="RESOURCE_ID">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="102" parent="7" name="ROLE_ID">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)</data-type>
+      </column>
+      <index id="103" parent="7" name="FK_q75rwu25irchhm81iav3g9uyd">
+        <columns>RESOURCE_ID</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="104" parent="7" name="PRIMARY">
+        <columns>ROLE_ID
+RESOURCE_ID</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="105" parent="7" name="FK_54py71f8xlos5rexajj0huoe7">
+        <columns>ROLE_ID</columns>
+        <ref-key>~.sys_role.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="106" parent="7" name="FK_q75rwu25irchhm81iav3g9uyd">
+        <columns>RESOURCE_ID</columns>
+        <ref-key>~.sys_resource.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+    </database-model>
+  </data-source>
+</component>
